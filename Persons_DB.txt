@@ -1,0 +1,14 @@
+create user person with password '123';
+create database person_departament;
+alter database person_departament owner to songer_cite;
+
+create table if not exists Persons (
+	id_person serial primary key,
+	id_departament integer references Departament(id_departament),
+	person_name varchar(40),
+	chief boolean
+);
+create table if not exists Departament (
+	id_departament serial primary key,
+	departament_name varchar(127) unique
+);
